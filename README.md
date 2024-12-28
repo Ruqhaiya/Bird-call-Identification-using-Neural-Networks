@@ -18,13 +18,17 @@ Neural networks gained popularity in the late 1980s but they didn’t dominate d
 
 Neural networks are machine learning algorithms that resemble the structure and functioning of the human brain. They detect complex patterns in data and forecast outcomes based on these patterns. Neural networks as the word suggests are a network of interconnected nodes like the neurons of our brain, they process information in a layered structure and each node passes the information to the next layer of nodes that it is connected to. 
 
-Consider the neural network illustrated in Figure 1 as an example. It consists of three layers: an input layer, a hidden layer, and an output layer. The input layer comprises nodes representing four features, namely x1, x2, x3, and x4. There are five activation functions denoted as A1, A2, A3, A4, and A5. These activation functions can be selected from a range of options such as Relu, tanh, sigmoid, softmax, and others. The choice of activation function depends on the specific objectives of the model and the performance characteristics of each function. Careful consideration is necessary to determine the most suitable activation functions for the desired outcomes. 
+Consider the neural network illustrated in ![Image 1](images/image_1.png)
+
+ as an example. It consists of three layers: an input layer, a hidden layer, and an output layer. The input layer comprises nodes representing four features, namely x1, x2, x3, and x4. There are five activation functions denoted as A1, A2, A3, A4, and A5. These activation functions can be selected from a range of options such as Relu, tanh, sigmoid, softmax, and others. The choice of activation function depends on the specific objectives of the model and the performance characteristics of each function. Careful consideration is necessary to determine the most suitable activation functions for the desired outcomes. 
 
 The input layer receives raw data. The output layer is responsible for making the final predictions. The intermediate levels are known as hidden layers, and they perform intermediary calculations. A neural network adjusts the weights between neurons during training to increase its prediction accuracy. The network is fed a set of labeled training data, and an optimization method is used to update the weights such that the network's predictions are as close to the true labels as possible.
 
 
 
-Figure 1 Neural Network with 3 layers- Architecture
+![Image 1](images/image_1.png)
+
+ Neural Network with 3 layers- Architecture
 
 For instance, the Rectified Linear Unit, or ReLU, a popular activation function used in neural networks. It works like this:
 
@@ -183,4 +187,25 @@ References:
 [3] James, G., Witten, D., Hastie, T., Tibshirani, R., & Taylor, J. (2023). An Introduction to Statistical Learning with Applications in Python. (Original work published 2023) 
 
 [4] Bastian, M. (2019, October 11). Neural Network: The Dead Neuron. Towards Data Science. 
+
+
+
+
+
+
+![Image 1](images/image_1.png)
+
+![Image 2](images/image_15.png)
+
+![Image 3](images/image_16.png)
+
+![Image 4](images/image_17.png)
+
+![Image 5](images/image_2.png)
+
+![Image 6](images/image_3.png)
+
+![Image 7](images/image_4.png)
+
+![Image 8](images/image_9.png)
 
