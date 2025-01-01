@@ -13,7 +13,9 @@ Neural networks gained popularity in the late 1980s but they didn’t dominate d
 Neural networks are machine learning algorithms that resemble the structure and functioning of the human brain. They detect complex patterns in data and forecast outcomes based on these patterns. Neural networks as the word suggests are a network of interconnected nodes like the neurons of our brain, they process information in a layered structure and each node passes the information to the next layer of nodes that it is connected to. 
 Consider the neural network illustrated in Figure 1 as an example. It consists of three layers: an input layer, a hidden layer, and an output layer. The input layer comprises nodes representing four features, namely x1, x2, x3, and x4. There are five activation functions denoted as A1, A2, A3, A4, and A5. These activation functions can be selected from a range of options such as Relu, tanh, sigmoid, softmax, and others. The choice of activation function depends on the specific objectives of the model and the performance characteristics of each function. Careful consideration is necessary to determine the most suitable activation functions for the desired outcomes. 
 The input layer receives raw data. The output layer is responsible for making the final predictions. The intermediate levels are known as hidden layers, and they perform intermediary calculations. A neural network adjusts the weights between neurons during training to increase its prediction accuracy. The network is fed a set of labeled training data, and an optimization method is used to update the weights such that the network's predictions are as close to the true labels as possible.
-![image](https://github.com/user-attachments/assets/8098cb7c-a819-4284-803b-98f3082c051d)
+
+![image](https://github.com/user-attachments/assets/19ed7df1-c4d0-4164-b7a3-6329fd184c85)
+
 Figure 1 Neural Network with 3 layers- Architecture
 For instance, the Rectified Linear Unit, or ReLU, a popular activation function used in neural networks. It works like this:
 f(x) = max(0, x); where x is the input.
@@ -77,6 +79,7 @@ For external testing, we preprocessed three MP3 files using the same methodology
 |                                     | 4             | Yes                           | 0.5    | 20     | 1.0   | 0.23              |
 |                                     | 4             |                               | 0.3    | 20     | 95.24 | 0.23              |
 | CNN - Batch Normalization & Early Stopping | 5      | Yes                           | 0.3    | 20     | 61.90 | 0.97              |
+
 Figure binary class classification results
 
 Sigmoid Activation Function: Models with 1 or 2 hidden layers and no dropout regularization achieved high validation accuracy of upto 94.24% and low CV error rates, suggesting they performed well. Introducing dropout regularization further improved generalization, slightly reducing the CV error rate. However, increasing to 3 hidden layers without dropout led to overfitting, as evidenced by a sharp drop in validation accuracy 47.62% and a high CV error rate.
@@ -87,11 +90,14 @@ Convolutional Neural Networks (CNNs): The CNN model with ReLU activation, 3 hidd
 Below are plots of CNN based binary classification models with various parameters and regularization techniques. The model without dropout regularization tends to overfit, as we can observe the fluctuating validation accuracy and validation loss. Introducing dropout regularization helped the model generalize well as shown by more stable validation accuracy and loss . The dropout rate to 0.3 provides some benefits, but overfitting still occurs. Combining batch normalization and early stopping results in the best performance, with consistent improvements in both training and validation metrics, that shows good generalization of the model. 
 
 ![image](https://github.com/user-attachments/assets/abf080af-60ee-410a-87c0-240878d2cd02) ![image](https://github.com/user-attachments/assets/733b2c96-bb8d-4ff0-bd78-7b47b852060f)
+
 Figure left: Binary classification CNN model performance without dropout regularization
 Right: CNN model performance with dropout regularization
+
 ![image](https://github.com/user-attachments/assets/9a8ace95-d9d3-4167-b4ff-eb68ebba66c9) ![image](https://github.com/user-attachments/assets/82f47f30-34f3-464b-8b44-7b1ded558982)
 Figure left: Binary classification CNN model with 0.3 dropout regularization
 Right: CNN with batch regularization and early stopping
+
 | Activation Function (Hidden layers) | Hidden Layers | Dropout Regularization (0.5) | Epochs | Validation Accuracy (%) | CV Error Rate (%) |
 |-------------------------------------|---------------|-------------------------------|--------|--------------------------|-------------------|
 | Sigmoid                             | 1             | Yes                           | 10     | 67.24                   | 1.12              |
@@ -112,16 +118,20 @@ Right: CNN with batch regularization and early stopping
 |                                     |               |                               | 20     | 72.41                   | 1.06              |
 
 Figure Multi-class classification models performance metrics
+
 Sigmoid Activation Function: With 1 hidden layer and dropout regularization, the model achieved a validation accuracy of 67.24%. Adding more hidden layers (2 and 3) resulted in a decrease in validation accuracy. with increasing CV error rates, indicating overfitting or inadequate learning.
 ReLU Activation Function: The model with 1 hidden layer and dropout regularization achieved a validation accuracy of 62.93%, when the number of hidden layers was increased, there’s a significant drop in performance, with the model's accuracy falling to ~ 12.93% and high CV error rates, indicating overfitting.
 Leaky ReLU Activation Function: Unlike other models, increasing to 2 and 3 hidden layers showed a slight improvement in validation accuracy to 57.76% and 44.83%, but still had relatively high CV error rates. 
 Tanh Activation Function: The model with 1 hidden layer and dropout regularization performed well with a validation accuracy of 63.79%. However, adding more hidden layers reduced the performance, with validation accuracy dropping to 55.17% and 46.55%, and increased CV error rates.
 CNN with 3 hidden layers and no dropout gave a validation accuracy of 67.24% and a CV error rate of 2.0% only.  CNN with Class Weights, 4 hidden layers and dropout achieved a validation accuracy of 68.97% and a CV error rate of 1.1%. Another configuration with class weights achieved a validation accuracy of 69.83% and a CV error rate of 1.01%. Extending the training to 20 epochs improved the performance further, with a validation accuracy of 72.41% and a CV error rate of 1.06%. 
 ![image](https://github.com/user-attachments/assets/52216ae6-f0d1-428e-8e53-a72d264c08e0)
+
 Confusion matrix with dropout regularization
 ![image](https://github.com/user-attachments/assets/b66fc065-0f4e-47b1-9cc1-aefbbbc28ac6)
+
 Confusion matrix with class weights and 10 epochs
 ![image](https://github.com/user-attachments/assets/b2088d89-4eb5-41dd-877e-a1eca1ed18ed)
+
 Confusion matrix with class weights and 20 epochs
 As it is evident, there’s improvement in predictions when we used class weights, this was done because there was class imbalance in the dataset and it led to probabilities of solid 1s and 0s. The models also exhibit overfitting signs due to the imbalance in data. We tried many models and the most efficient were CNNs, although the highest accuracy was 72% for the multi-class classification model.
 ![image](https://github.com/user-attachments/assets/b5d54b89-d766-4d06-b48e-85ea31a133f9)
